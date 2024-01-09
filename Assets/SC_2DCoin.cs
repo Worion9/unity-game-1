@@ -6,6 +6,7 @@ public class SC_2DCoin : MonoBehaviour
 {
     //Keep track of total picked coins (Since the value is static, it can be accessed at "SC_2DCoin.totalCoins" from any script)
     public static int totalCoins = 0;
+    public static string displyedCoins = totalCoins.ToString() + " / 10";
     public AudioSource audioSource;
     public AudioClip clip;
 
@@ -31,7 +32,8 @@ public class SC_2DCoin : MonoBehaviour
             gameObject.GetComponent<SpriteRenderer>().enabled = false;
             GetComponent<Collider2D>().enabled = false;
             //Add coin to counter
-            totalCoins += 1;
+            totalCoins++;
+            displyedCoins = totalCoins.ToString() + " / 10";
             //Test: Print total number of coins
             Debug.Log("You currently have " + SC_2DCoin.totalCoins + " Coins.");
         }

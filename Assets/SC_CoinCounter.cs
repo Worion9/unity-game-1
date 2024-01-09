@@ -17,9 +17,9 @@ public class SC_CoinCounter : MonoBehaviour
     void Update()
     {
         //Set the current number of coins to display
-        if (counterText.text != SC_2DCoin.totalCoins.ToString())
+        if (counterText.text != SC_2DCoin.displyedCoins.ToString())
         {
-            counterText.text = SC_2DCoin.totalCoins.ToString();
+            counterText.text = SC_2DCoin.displyedCoins.ToString();
         }
     }
 }
