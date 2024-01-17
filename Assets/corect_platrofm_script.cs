@@ -29,4 +29,16 @@ public class CorrectPlatformScript : MonoBehaviour
             Gizmos.DrawLine(platform.position, endPoint.position);
         }
     }
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            // Gracz dotkn¹³ przeciwnika - zadaj obra¿enia
+            Player player = other.GetComponent<Player>();
+            if (player != null)
+            {
+                player.OtrzymajObrazeniaOdPrzeciwnika(1);
+            }
+        }
+    }
 }
